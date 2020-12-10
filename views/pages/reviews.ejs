@@ -1,0 +1,50 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+	<div class="container">
+		<br>
+		<div class="jumbotron">
+		  <h1 class="display-4">University Reviews</h1>
+		  <p class="lead">Take a look!</p>
+		</div>
+		
+		<table class="table table-bordered" id="stats_table">
+			<tr>
+				<th class="align-bottom" >University</th>
+				<th class="align-bottom">Review</th>
+				<th class="align-bottom">Date </th>
+				
+			</tr> 
+
+			
+			
+		
+			<!-- TODO: Iterate over the Football_table data here 
+						1. Display the information for each row (date, name, home score, visitor score)
+						2. Determine who the winner is and display it in the final column
+
+						If you're not sure how the logic should work here, review the code you add to the client-side javascript
+						that ran onload for Lab 5.  We are doing the same kind of operations we had in Lab 5, but we are instead having
+						everything handled via server-side scriptes
+			-->
+			<%
+			
+			
+			if (data) {
+				
+				var table = '';
+				data.forEach(function(item){
+					table += ' <tr> <td>' + item.university_name + '</td> <td>' + item.review + '</td> <td>' + item.review_date + '</td></tr>'; 
+				
+					}); %>
+
+				<%- table %>   
+
+			<% } %>				
+
+			
+		</table>
+		<br>
+		
+		
+	</div>
+<%- include('../partials/footer') %>

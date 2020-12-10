@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+<%- include('../partials/menu') %>
+
+	
+
+	
+	
+	<form>
+        <label for="search"></label><br>
+        <input type="search" id="tagSearched" name="taggy" ></input><br>
+      </form> 
+
+      
+      
+      <button type="submit" onclick ="makeApiCall()">Search</button>
+
+  
+      <div class="row" id="search_results">
+
+	</div>
+
+	<div class="modal" id="myModal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+		
+			  
+			  <div class="modal-header">
+				<h4 class="modal-title">Add Review</h4>
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+			  </div>
+		
+			  
+			  <div class="modal-body">
+
+				<form action="/home" method="post">
+					<label for="universityName">University Name</label>
+					<textarea readonly id="universityName" name="universityName"> </textarea>
+					<label for="new_review">Enter your review here:</label>
+					
+						<!-- would be ideal to display username in city -->
+						<!-- <p>User: </p> -->
+						<textarea class="form-control" id="new_review" name="new_review" rows="4" style="opacity: 0.96;"></textarea>
+						<!-- want this to be displayed under other comments and also sent to database -->
+						<!-- I cannot click this rn! -->
+						<button type="submit" class="btn btn-primary btn-block">Submit</button>  
+					</form>
+		
+			 
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			  </div>
+		
+			</div>
+		  </div>
+	</div>
+
+	
+	
+
+  
+<%- include('../partials/footer') %>
