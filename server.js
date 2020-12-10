@@ -30,13 +30,15 @@ var $ = require('jquery');
   user: This should be left as postgres, the default user account created when PostgreSQL was installed
   password: This the password for accessing the database.  You'll need to set a password USING THE PSQL TERMINAL THIS IS NOT A PASSWORD FOR POSTGRES USER ACCOUNT IN LINUX!
 **********************/
-const dbConfig = {
+let dbConfig = {
 	host: 'localhost',
 	port: 5432,
 	database: 'reviews',
 	user: 'postgres',
-	password: 'fatcat'
+	password: 'pwd'
 };
+
+
 
 const isProduction = process.env.NODE_ENV === 'production';
 dbConfig = isProduction ? process.env.DATABASE_URL : dbConfig;
